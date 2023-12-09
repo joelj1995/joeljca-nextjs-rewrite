@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '@/assets/css/theme.min.css';
+import '@/assets/vendor/boxicons/css/boxicons.min.css';
+import '@/assets/vendor/swiper/swiper-bundle.min.css';
+import Header from './ui/header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+        <Header />
+        <main className="page-wrapper">
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
