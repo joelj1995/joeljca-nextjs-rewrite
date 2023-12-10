@@ -4,6 +4,9 @@ import '@/assets/css/theme.min.css';
 import '@/assets/vendor/boxicons/css/boxicons.min.css';
 import '@/assets/vendor/swiper/swiper-bundle.min.css';
 import Header from './ui/header';
+import { Manrope } from 'next/font/google';
+
+const manrope = Manrope({ subsets: ['latin'] } );
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={manrope.className}>
         <Header />
         <main className="page-wrapper">
           {children}
