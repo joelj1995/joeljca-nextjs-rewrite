@@ -5,6 +5,7 @@ import { CfPost } from "../model/contentful";
 import { Post } from "../model/post";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { parse } from 'node-html-parser';
 
 const client = createClient(environment.contentful);
 
@@ -38,10 +39,8 @@ const convertPost = (postSkeletonData: Entry<CfPost, "WITHOUT_LINK_RESOLUTION", 
 };
 
 const extractExcerpt = (htmlString: string): string => {
-  return 'Test excerpt';
-  var tempDiv = document.createElement('div');
-  tempDiv.innerHTML = htmlString;
-  var extractedText = tempDiv.querySelector('p')?.textContent || '';
+  const root = parse(`<div>${htmlString}</div>`);
+  var extractedText = root.querySelector('p')?.textContent || '';
   return `<p>${extractedText.slice(0, 287)} [&hellip;]</p>`;
 }
 
