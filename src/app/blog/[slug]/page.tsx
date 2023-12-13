@@ -1,10 +1,20 @@
 import { PageHeader } from "@/app/ui/page-header";
 import { getPostFromContentful } from "@/lib/services/contentful";
 
+import { NotFoundError } from "@/lib/model/app-error";
+
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
 
-  // TODO: How do I set a 404 if post isn't found?
   const post = await getPostFromContentful(params.slug);
+  if (post instanceof NotFoundError) {
+    return (
+      <div className="container">
+        <PageHeader
+          title="Not Found"
+          subtitle="Sorry, we couldn't find that post."/>
+      </div>
+    );
+  }
 
   return (
     <div className="container">

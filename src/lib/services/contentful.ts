@@ -6,15 +6,19 @@ import { Post } from "../model/post";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { parse } from 'node-html-parser';
+import { NotFoundError } from "../model/app-error";
 
 const client = createClient(environment.contentful);
 
-export async function getPostFromContentful(slug: string): Promise<Post> {
+export async function getPostFromContentful(slug: string): Promise<Post | NotFoundError> {
   let result = await client.getEntries<CfPost>({
     limit: 1,
     content_type: "post",
     "fields.slug": slug
   });
+  if (result.items.length === 0) {
+    return new NotFoundError(`Post with slug ${slug} not found`);
+  }
   return convertPost(result.items[0]);
 }
 
