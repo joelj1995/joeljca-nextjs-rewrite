@@ -4,7 +4,9 @@ export default function Home() {
   return (
     <div className="container">
       <PageHeader title="Home" />
-      <p>Hello world!</p>
+      <section>
+        <p>Hello world!</p>
+      </section>
     </div>
   )
 }
