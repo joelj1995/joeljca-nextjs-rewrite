@@ -29,7 +29,7 @@ export function BlogRoll({ posts }: { posts: Post[] }) {
                 <h3 className="h4">
                   <Link href={ `/blog/${post.slug}` }>{post.title}</Link>
                 </h3>
-                <p dangerouslySetInnerHTML={{ __html: post.excerpt }}></p>
+                <p>{ post.excerpt } [&hellip;]</p>
                 <hr className="my-4"></hr>
                 <div className="d-flex align-items-center justify-content-between">
                   <a href={ `/blog/${post.slug}` } className="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">

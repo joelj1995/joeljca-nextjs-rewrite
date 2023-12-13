@@ -6,6 +6,7 @@ import { NotFoundError } from "@/lib/model/app-error";
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const post = await getPostFromContentful(params.slug);
+
   if (post instanceof NotFoundError) {
     return (
       <div className="container">

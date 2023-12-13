@@ -54,7 +54,7 @@ const convertPost = (postSkeletonData: Entry<CfPost, "WITHOUT_LINK_RESOLUTION", 
 const extractExcerpt = (htmlString: string): string => {
   const root = parse(`<div>${htmlString}</div>`);
   var extractedText = root.querySelector('p')?.textContent || '';
-  return `<p>${extractedText.slice(0, 287)} [&hellip;]</p>`;
+  return extractedText.slice(0, 287);
 }
 
 const renderOptions = {
