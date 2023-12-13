@@ -24,7 +24,7 @@ export function BlogRoll({ posts }: { posts: Post[] }) {
             <div className="col-sm-8">
               <div className="card-body">
                 <div className="d-flex align-items-center mb-3">
-                  <span className="fs-sm text-muted">{post.date.toString()}</span>
+                  <span className="fs-sm text-muted">{ post.date.toDateString() }</span>
                 </div>
                 <h3 className="h4">
                   <Link href="post.slug">{post.title}</Link>
@@ -39,6 +39,7 @@ export function BlogRoll({ posts }: { posts: Post[] }) {
                 </div>
               </div>
             </div>
+
           </div>
         </article>
       ))}

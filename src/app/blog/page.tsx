@@ -4,6 +4,7 @@ import { getPostsFromContentful } from "@/lib/services/contentful";
 import { BlogRoll } from "./blogroll";
 import { BlogPaginator } from "./blogpaginator";
 import { useSearchParams } from "next/navigation";
+import { PageHeader } from "../ui/page-header";
 
 export default async function BlogPage() {
 
@@ -13,7 +14,7 @@ export default async function BlogPage() {
 
   return (
     <div className="container">
-      <h1>Blog</h1>
+      <PageHeader title="Blog" />
       <BlogRoll posts={posts.posts} />
       <BlogPaginator page={page} numPages={posts.totalPages} />
     </div>
