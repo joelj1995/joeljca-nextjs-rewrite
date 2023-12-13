@@ -8,7 +8,7 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 const client = createClient(environment.contentful);
 
-export async function getPostsFromContentful(page: number = 1, perPage: number = 10): Promise<Posts> {
+export async function getPostsFromContentful(page: number = 1, perPage: number = 5): Promise<Posts> {
   let result = await client.getEntries<CfPost>({
     limit: perPage,
     skip: (page - 1) * perPage,
@@ -38,7 +38,7 @@ const convertPost = (postSkeletonData: Entry<CfPost, "WITHOUT_LINK_RESOLUTION", 
 };
 
 const extractExcerpt = (htmlString: string): string => {
-  return '';
+  return 'Test excerpt';
   var tempDiv = document.createElement('div');
   tempDiv.innerHTML = htmlString;
   var extractedText = tempDiv.querySelector('p')?.textContent || '';
