@@ -7,7 +7,7 @@ import blogPreviewPic from '../../assets/img/blog/01.jpg';
 
 export function BlogRoll({ posts }: { posts: Post[] }) {
   return (
-    <div className="blogroll">
+    <div>
       {posts.map((post) => (
         <article className="card border-0 shadow-sm overflow-hidden mb-4" key={post.slug}>
           <div className="row g-0">

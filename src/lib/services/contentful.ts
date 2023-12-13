@@ -9,6 +9,15 @@ import { parse } from 'node-html-parser';
 
 const client = createClient(environment.contentful);
 
+export async function getPostFromContentful(slug: string): Promise<Post> {
+  let result = await client.getEntries<CfPost>({
+    limit: 1,
+    content_type: "post",
+    "fields.slug": slug
+  });
+  return convertPost(result.items[0]);
+}
+
 export async function getPostsFromContentful(page: number = 1, perPage: number = 5): Promise<Posts> {
   let result = await client.getEntries<CfPost>({
     limit: perPage,

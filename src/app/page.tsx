@@ -1,8 +1,9 @@
+import { PageHeader } from "./ui/page-header";
 
 export default function Home() {
   return (
     <div className="container">
-      <h1>Home</h1>
+      <PageHeader title="Home" />
       <p>Hello world!</p>
     </div>
   )

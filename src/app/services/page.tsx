@@ -1,7 +1,9 @@
+import { PageHeader } from "../ui/page-header";
+
 export default function ServicesPage() {
   return (
     <div className="container">
-      <h1>Services</h1>
+      <PageHeader title="Services" />
       <p>Coming soon...</p>
     </div>
   )
