@@ -27,12 +27,12 @@ export function BlogRoll({ posts }: { posts: Post[] }) {
                   <span className="fs-sm text-muted">{ post.date.toDateString() }</span>
                 </div>
                 <h3 className="h4">
-                  <Link href="post.slug">{post.title}</Link>
+                  <Link href={ `/blog/${post.slug}` }>{post.title}</Link>
                 </h3>
                 <p dangerouslySetInnerHTML={{ __html: post.excerpt }}></p>
                 <hr className="my-4"></hr>
                 <div className="d-flex align-items-center justify-content-between">
-                  <a href="/pages/about-me" className="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+                  <a href={ `/blog/${post.slug}` } className="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
                     <Image src={profilePic} className="rounded-circle me-3" width={48} height={48} alt="Avatar" />
                     Joel Johnston
                   </a>
