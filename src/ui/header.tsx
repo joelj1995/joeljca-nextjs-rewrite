@@ -18,7 +18,10 @@ const navItems: NavigationItem[] = [
   { text: "Source", link: "https://github.com/joelj1995/joeljdotca", bypassRouter: true },
 ];
 
-export default function Header() {
+const lightHeaderClasses = "header navbar navbar-expand-lg bg-light shadow-sm shadow-dark-mode-none";
+const darkHeaderClasses = "header navbar navbar-expand-lg bg-dark navbar-dark position-absolute navbar-sticky";
+
+export default function Header({ forceDarkMode = false }: { forceDarkMode: boolean}) {
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -29,7 +32,7 @@ export default function Header() {
   }, [pathName]);
 
   return (
-    <header className="header navbar navbar-expand-lg bg-light shadow-dark-mode-none shadow-sm">
+    <header className={forceDarkMode ? darkHeaderClasses : lightHeaderClasses}>
       <div className="container px-3">
 
         <Link
