@@ -1,4 +1,4 @@
-import { PageHeader } from "./ui/page-header";
+import { PageHeader } from "../ui/page-header";
 
 export default function Home() {
   return (

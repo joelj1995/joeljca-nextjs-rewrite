@@ -1,4 +1,4 @@
-import { PageHeader } from "@/app/ui/page-header";
+import { PageHeader } from "@/ui/page-header";
 import { getPostFromContentful } from "@/lib/services/contentful";
 
 import { NotFoundError } from "@/lib/model/app-error";
