@@ -1,3 +1,4 @@
+import { getCookie, setCookie } from "../lib";
 
 export function getTheme(): string | null {
   if (typeof window === 'undefined') {
@@ -17,24 +18,6 @@ const setStoredTheme = (theme: string) => {
   setCookie('theme', theme);
 };
 
-function setCookie(cname: string, cvalue: string) {
-  document.cookie = cname + "=" + cvalue + ";path=/";
-}
 
-function getCookie(cname: string) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 if (typeof window !== 'undefined') setTheme(getStoredTheme() || 'light');

@@ -7,6 +7,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { parse } from 'node-html-parser';
 import { NotFoundError } from "../model/app-error";
+import { sleep } from "../lib";
 
 const client = createClient(environment.contentful);
 
@@ -29,6 +30,7 @@ export async function getPostsFromContentful(page: number = 1, perPage: number =
     order: ['-fields.published'],
     content_type: "post"
   });
+  await sleep(environment.extraLatency);
   return {
     posts: result.items.map(convertPost),
     totalPages: Math.ceil(result.total / perPage)
