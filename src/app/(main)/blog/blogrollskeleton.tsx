@@ -1,6 +1,6 @@
 import Image from "next/image";
-import profilePic from '../../assets/img/its-me.jpg';
-import blogPreviewPic from '../../assets/img/blog/01.jpg';
+import profilePic from '../../../assets/img/its-me.jpg';
+import blogPreviewPic from '../../../assets/img/blog/01.jpg';
 
 export function BlogRollSkeleton() {
   return (

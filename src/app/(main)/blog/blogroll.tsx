@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import profilePic from '../../assets/img/its-me.jpg';
-import blogPreviewPic from '../../assets/img/blog/01.jpg';
+import profilePic from '../../../assets/img/its-me.jpg';
+import blogPreviewPic from '../../../assets/img/blog/01.jpg';
 import { getPostsFromContentful } from "@/lib/services/contentful";
 import { BlogPaginator } from "./blogpaginator";
 

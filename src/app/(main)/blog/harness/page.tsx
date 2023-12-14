@@ -1,4 +1,4 @@
-import { PageHeader } from "../../../ui/page-header";
+import { PageHeader } from "../../../../ui/page-header";
 import { BlogRollSkeleton } from "../blogrollskeleton";
 
 export default function Loading() {

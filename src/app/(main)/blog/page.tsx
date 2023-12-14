@@ -1,5 +1,5 @@
 import { BlogRoll } from "./blogroll";
-import { PageHeader } from "../../ui/page-header";
+import { PageHeader } from "../../../ui/page-header";
 import { Suspense } from "react";
 import { BlogRollSkeleton } from "./blogrollskeleton";
 
