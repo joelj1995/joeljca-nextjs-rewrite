@@ -2,7 +2,8 @@
 import Link from "next/link";
 import HeaderNavLink from "./header-nav-link";
 import ThemeToggle from "./theme-toggle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export interface NavigationItem {
   text: string;
@@ -20,6 +21,12 @@ const navItems: NavigationItem[] = [
 export default function Header() {
 
   const [showMenu, setShowMenu] = useState(false);
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setShowMenu(false);
+  }, [pathName]);
 
   return (
     <header className="header navbar navbar-expand-lg bg-light shadow-dark-mode-none shadow-sm">
