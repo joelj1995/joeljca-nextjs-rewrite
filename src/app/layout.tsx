@@ -25,10 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-bs-theme={theme}>
       <body className={manrope.className} >
-
-        <main className="page-wrapper">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   )

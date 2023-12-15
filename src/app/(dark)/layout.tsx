@@ -6,11 +6,12 @@ export default function DarkNavLayhout ({
   children: React.ReactNode
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
+    <>
       <Header forceDarkMode={true} />
 
-      {children}
-    </section>
+      <main>
+        {children}
+      </main>
+    </>
   )
 }

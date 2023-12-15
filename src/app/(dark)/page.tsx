@@ -1,12 +1,13 @@
-import { PageHeader } from "../../ui/page-header";
+import Hero from "./hero";
 
 export default function Home() {
   return (
-    <div className="container">
-      <PageHeader title="Home" />
-      <section>
-        <p>Hello world!</p>
-      </section>
-    </div>
+    <>
+      <Hero
+        title1White="Expert .NET"
+        title2Blue="Software Developer"
+        subtitle="I help something hopefully..."
+      />
+    </>
   )
 }
