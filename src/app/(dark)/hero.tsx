@@ -53,14 +53,14 @@ export default function Hero(props : HeroProps) {
               <div className="position-relative row row-cols-sm-2 row-cols-1 gx-xl-4 gx-lg-3 gx-md-4 gx-3">
                 <div className="col">
                   <div className="d-sm-grid d-flex gap-xl-4 gap-lg-3 gap-md-4 gap-sm-3 gap-2">
-                    <HeroTagline tagline={ props.tagline1 }  />
-                    <HeroTagline tagline={ props.tagline2 }  />
+                    <HeroTagline tagline={ props.tagline1 } seq={1} />
+                    <HeroTagline tagline={ props.tagline2 } seq={2}  />
                   </div>
                 </div>
                 <div className="col mt-sm-5 mt-2 pt-sm-5">
                   <div className="d-sm-grid d-flex gap-xl-4 gap-lg-3 gap-md-4 gap-sm-3 gap-2">
-                    <HeroTagline tagline={ props.tagline3 }  />
-                    <HeroTagline tagline={ props.tagline4 }  />
+                    <HeroTagline tagline={ props.tagline3 } seq={3}  />
+                    <HeroTagline tagline={ props.tagline4 } seq={4}  />
                   </div>
                 </div>
               </div>
