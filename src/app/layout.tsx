@@ -5,6 +5,7 @@ import '@/assets/vendor/boxicons/css/boxicons.min.css';
 import '@/assets/vendor/swiper/swiper-bundle.min.css';
 import { Manrope } from 'next/font/google';
 import { cookies } from 'next/headers';
+import Footer from '@/ui/footer';
 
 const manrope = Manrope({ subsets: ['latin'] } );
 
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en" data-bs-theme={theme}>
       <body className={manrope.className} >
         {children}
+        <Footer />
       </body>
     </html>
   )
