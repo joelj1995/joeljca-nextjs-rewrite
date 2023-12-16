@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NavigationItem } from "./header";
+import { NavigationItem } from "@/lib/services/nav";
 
 export default function HeaderNavLink({ navItem }: { navItem: NavigationItem }) {
   return (
