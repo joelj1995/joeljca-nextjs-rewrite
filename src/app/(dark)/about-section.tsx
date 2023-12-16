@@ -24,9 +24,8 @@ export default function AboutSection(props : AboutSectionProps) {
         <div className="col-lg-5 col-md-10 offset-lg-1 d-flex">
           <div className="align-self-center ps-lg-0 ps-md-4">
             <h2 className="h1 mb-lg-4 mb-3">{ props.title }</h2>
-            <p className="mb-4 pb-lg-3 fs-lg">
-              { props.aboutMe }
-            </p>
+            <div className="mb-4 pb-lg-3 fs-lg" dangerouslySetInnerHTML={{ __html: props.aboutMe }}>
+            </div>
             <Link href="/about" className="btn btn-lg btn-outline-primary">More about me</Link>
           </div>
         </div>

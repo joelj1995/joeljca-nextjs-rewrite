@@ -1,22 +1,39 @@
+import { getHomeViewModelFromContentful } from "@/lib/services/contentful";
 import AboutSection from "./about-section";
 import Hero from "./hero";
+import { PageHeader } from "@/ui/page-header";
+import { NotFoundError } from "@/lib/model/app-error";
 
-export default function Home() {
+export default async function Home() {
+
+  const vm = await getHomeViewModelFromContentful(1);
+
+  if (vm instanceof NotFoundError) {
+    return (
+      <div className="container">
+        <PageHeader
+          title="Not Found"
+          subtitle="Sorry, there was an issue loading this page."/>
+      </div>
+    );
+  }
+
+
   return (
     <>
       <Hero
-        title1White="Expert .NET"
-        title2Blue="Software Developer"
-        subtitle="I help something hopefully..."
-        tagline1="one"
-        tagline2="two"
-        tagline3="three"
-        tagline4="four"
+        title1White={vm.title1White}
+        title2Blue={vm.title2Blue}
+        subtitle={vm.subtitle}
+        tagline1={vm.tagline1}
+        tagline2={vm.tagline2}
+        tagline3={vm.tagline3}
+        tagline4={vm.tagline4}
       />
 
       <AboutSection
-        title="Full Stack Software Developer"
-        aboutMe="I'm a Full Stack Software Developer, experienced with RESTful .NET APIs, CRM integrations, and Angular SPAs. As a freelancer, I specialize in helping clients integrate with Learning Management Systems."
+        title={vm.aboutMeTitle}
+        aboutMe={vm.aboutMe}
       />
     </>
   )

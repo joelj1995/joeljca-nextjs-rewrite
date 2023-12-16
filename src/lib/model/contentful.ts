@@ -20,3 +20,19 @@ export type CfPost = {
     published: EntryFieldTypes.Date
   }
 }
+
+export type CfVMHome = {
+  contentTypeId: "homePageViewModelV1"
+  fields: {
+    version: EntryFieldTypes.Integer;
+    title1White: EntryFieldTypes.Text;
+    title2Blue: EntryFieldTypes.Text;
+    subtitle: EntryFieldTypes.Text;
+    tagline1: EntryFieldTypes.Text;
+    tagline2: EntryFieldTypes.Text;
+    tagline3: EntryFieldTypes.Text;
+    tagline4: EntryFieldTypes.Text;
+    aboutMeTitle: EntryFieldTypes.Text;
+    aboutMe: EntryFieldTypes.RichText;
+  }
+}

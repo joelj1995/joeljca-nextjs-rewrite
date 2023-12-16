@@ -1,13 +1,14 @@
 import { Entry, createClient } from "contentful";
 import { environment } from "../environment";
 import { Posts } from "../model/posts";
-import { CfPost } from "../model/contentful";
+import { CfPost, CfVMHome } from "../model/contentful";
 import { Post } from "../model/post";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { parse } from 'node-html-parser';
 import { NotFoundError } from "../model/app-error";
 import { sleep } from "../lib";
+import { VMHome } from "../model/vm-home";
 
 const client = createClient(environment.contentful);
 
@@ -35,6 +36,22 @@ export async function getPostsFromContentful(page: number = 1, perPage: number =
     posts: result.items.map(convertPost),
     totalPages: Math.ceil(result.total / perPage)
   } as Posts;
+}
+
+export async function getHomeViewModelFromContentful(version: number): Promise<VMHome | NotFoundError> {
+  let result = await client.getEntries<CfVMHome>({
+    limit: 1,
+    content_type: "homePageViewModelV1",
+    "fields.version": version
+  });
+  if (result.items.length === 0) {
+    return new NotFoundError(`VMHome with version ${version} not found`);
+  }
+  const resultFields = result.items[0].fields;
+  return {
+    ...resultFields,
+    aboutMe: documentToHtmlString(resultFields.aboutMe, renderOptions)
+  } as VMHome;
 }
 
 const convertPost = (postSkeletonData: Entry<CfPost, "WITHOUT_LINK_RESOLUTION", string>) => {
