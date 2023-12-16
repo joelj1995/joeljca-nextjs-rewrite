@@ -1,18 +1,14 @@
 "use server";
 
 export interface FooterServerInfoProps {
-  node: string;
-  slot: string;
-  lb: string
+  version: string;
 }
 
 export default async function FooterServerInfo(props : FooterServerInfoProps) {
   return (
     <p className="font-monospace">
       <small>
-        { props.node }
-        { props.slot }
-        { props.lb }
+        <a href={`https://github.com/joelj1995/joeljdotca/commit/${props.version}`}>{ props.version }</a>
       </small>
     </p>
   );

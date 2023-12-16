@@ -4,19 +4,7 @@ import HeaderNavLink from "./header-nav-link";
 import ThemeToggle from "./theme-toggle";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-
-export interface NavigationItem {
-  text: string;
-  link: string;
-  bypassRouter: boolean;
-};
-
-const navItems: NavigationItem[] = [
-  { text: "Services", link: "/services", bypassRouter: false },
-  { text: "Blog", link: "/blog", bypassRouter: false },
-  { text: "About Me", link: "/pages/about-me", bypassRouter: false },
-  { text: "Source", link: "https://github.com/joelj1995/joeljdotca", bypassRouter: true },
-];
+import { navItems } from "@/lib/services/nav";
 
 const lightHeaderClasses = "header navbar navbar-expand-lg bg-light shadow-sm shadow-dark-mode-none";
 const darkHeaderClasses = "header navbar navbar-expand-lg bg-dark navbar-dark position-absolute navbar-sticky";
