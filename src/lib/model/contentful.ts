@@ -36,3 +36,13 @@ export type CfVMHome = {
     aboutMe: EntryFieldTypes.RichText;
   }
 }
+
+export type CfVMServiceItem = {
+  contentTypeId: "serviceItem"
+  fields: {
+    name: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+    icon: EntryFieldTypes.Text;
+    seq: number;
+  }
+}

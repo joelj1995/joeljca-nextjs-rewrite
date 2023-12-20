@@ -1,7 +1,7 @@
 import { Entry, createClient } from "contentful";
 import { environment } from "../environment";
 import { Posts } from "../model/posts";
-import { CfPost, CfVMHome } from "../model/contentful";
+import { CfPost, CfVMHome, CfVMServiceItem } from "../model/contentful";
 import { Post } from "../model/post";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
@@ -9,6 +9,7 @@ import { parse } from 'node-html-parser';
 import { NotFoundError } from "../model/app-error";
 import { sleep } from "../lib";
 import { VMHome } from "../model/vm-home";
+import { VMServices } from "../model/vm-services";
 
 const client = createClient(environment.contentful);
 
@@ -52,6 +53,15 @@ export async function getHomeViewModelFromContentful(version: number): Promise<V
     ...resultFields,
     aboutMe: documentToHtmlString(resultFields.aboutMe, renderOptions)
   } as VMHome;
+}
+
+export async function getServicesViewModelFromContentful(): Promise<VMServices> {
+  let result = await client.getEntries<CfVMServiceItem>({
+    content_type: "serviceItem",
+  });
+  return {
+    services: result.items.map(item => item.fields).sort((a, b) => a.seq - b.seq)
+  } as VMServices;
 }
 
 const convertPost = (postSkeletonData: Entry<CfPost, "WITHOUT_LINK_RESOLUTION", string>) => {

@@ -1,27 +1,10 @@
-import { VMServices } from "@/lib/model/vm-services";
 import { PageHeader } from "../../../ui/page-header";
 import ServiceItem from "./service-items";
-
-async function getServicesStub(): Promise<VMServices> {
-  return {
-    services: [
-      {
-        name: "Full Stack Software Development",
-        description: "I can build you a website or web application from the ground up. I can also build you a mobile app.",
-        icon: "cms"
-      },
-      {
-        name: "DevOps Consulting",
-        description: "Do software releases make you sweat? I will walk you through best practices in version control, CI/CD, release management and monitoring so that you can deploy updates to your web service without fear.",
-        icon: "rocket"
-      }
-    ]
-  };
-}
+import { getServicesViewModelFromContentful } from "@/lib/services/contentful";
 
 export default async function ServicesPage() {
 
-  const services = await getServicesStub();
+  const services = await getServicesViewModelFromContentful();
 
   return (
     <div className="container">
