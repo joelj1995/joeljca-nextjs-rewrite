@@ -17,7 +17,7 @@ export default function Footer() {
               Midnight Sky Software Solutions Ltd.
             </div>
             <p className="fs-sm text-light opacity-70 pb-lg-3 mb-4">
-              Head high up in the clouds
+              I was born to run~
             </p>
             <EmailSubscribeForm />
           </div>
