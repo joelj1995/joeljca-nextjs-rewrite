@@ -25,9 +25,9 @@ export default async function ServicesPage() {
       </div>
 
       <section className="container pb-5 mb-2 mb-md-4 mb-lg-5">
-          <h2 className="h1 text-center pt-1 pt-xl-2 mb-4">Looking for next steps?</h2>
-          <p className="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">Shoot me an email at <a href="mailto:me@joelj.ca">me@joelj.ca</a>.</p>
-        </section>
+        <h2 className="h1 text-center pt-1 pt-xl-2 mb-4">Looking for next steps?</h2>
+        <p className="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">Shoot me an email at <a href="mailto:me@joelj.ca">me@joelj.ca</a>.</p>
+      </section>
 
     </div>
   )
