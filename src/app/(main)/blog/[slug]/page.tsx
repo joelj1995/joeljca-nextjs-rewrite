@@ -1,11 +1,11 @@
 import { PageHeader } from "@/ui/page-header";
-import { getPostFromContentful } from "@/lib/services/contentful";
 
 import { NotFoundError } from "@/lib/model/app-error";
+import { getPostFromWordpress } from "@/lib/services/wordpess";
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
 
-  const post = await getPostFromContentful(params.slug);
+  const post = await getPostFromWordpress(params.slug);
 
   if (post instanceof NotFoundError) {
     return (
@@ -22,7 +22,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       <PageHeader
         title={post.title}
-        subtitle={post.date.toDateString()}/>
+        subtitle={post.date}/>
 
       <section
         className="container mb-5 pt-1 pb-2">

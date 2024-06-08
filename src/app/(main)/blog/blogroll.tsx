@@ -5,10 +5,11 @@ import profilePic from '../../../assets/img/its-me.jpg';
 import blogPreviewPic from '../../../assets/img/blog/01.jpg';
 import { getPostsFromContentful } from "@/lib/services/contentful";
 import { BlogPaginator } from "./blogpaginator";
+import { getPostsFromWordpress } from "@/lib/services/wordpess";
 
 export async function BlogRoll({ page }: { page: number }) {
 
-  const posts = await getPostsFromContentful(page, 5);
+  const posts = await getPostsFromWordpress(page, 5);
 
   return (
     <>
@@ -29,12 +30,12 @@ export async function BlogRoll({ page }: { page: number }) {
               <div className="col-sm-8">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <span className="fs-sm text-muted">{post.date.toDateString()}</span>
+                    <span className="fs-sm text-muted">{post.date}</span>
                   </div>
                   <h3 className="h4">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  <p>{post.excerpt} [&hellip;]</p>
+                  <span dangerouslySetInnerHTML={{__html: post.excerpt}}></span>
                   <hr className="my-4"></hr>
                   <div className="d-flex align-items-center justify-content-between">
                     <a href={`/blog/${post.slug}`} className="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
