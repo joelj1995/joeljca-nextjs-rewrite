@@ -45,7 +45,6 @@ export default function Footer() {
                   <div className="col-lg-4">
                     <ul className="nav flex-column pb-lg-1 mb-lg-3">
                       <li className="nav-link d-inline-block px-0 pt-1 pb-2"><a className="nav-link text-light p-0" href="https://www.linkedin.com/in/joeljohnston1995/" target="_blank">LinkedIn</a></li>
-                      <li className="nav-link d-inline-block px-0 pt-1 pb-2"><a className="nav-link text-light p-0" href="https://www.upwork.com/freelancers/~01dac30226caf51514/" target="_blank">Upwork</a></li>
                     </ul>
                   </div>
                 </div>
