@@ -4,7 +4,7 @@ export function setCookie(cname: string, cvalue: string) {
   document.cookie = cname + "=" + cvalue + ";path=/";
 }
 
-export function getCookie(cname: string) {
+export function getCookie(cname: string): string {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -18,4 +18,9 @@ export function getCookie(cname: string) {
     }
   }
   return "";
+}
+
+export function formatDate(dateString: string): string {
+  let d = new Date(dateString);
+  return d.toLocaleDateString();
 }

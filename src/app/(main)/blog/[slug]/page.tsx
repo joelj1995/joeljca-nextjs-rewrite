@@ -2,6 +2,7 @@ import { PageHeader } from "@/ui/page-header";
 
 import { NotFoundError } from "@/lib/model/app-error";
 import { getPostFromWordpress } from "@/lib/services/wordpess";
+import { formatDate } from "@/lib/lib";
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
 
@@ -22,7 +23,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       <PageHeader
         title={post.title}
-        subtitle={post.date}/>
+        subtitle={formatDate(post.date)}/>
 
       <section
         className="container mb-5 pt-1 pb-2">

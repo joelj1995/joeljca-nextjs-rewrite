@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import profilePic from '../../../assets/img/its-me.jpg';
 import blogPreviewPic from '../../../assets/img/blog/01.jpg';
-import { getPostsFromContentful } from "@/lib/services/contentful";
 import { BlogPaginator } from "./blogpaginator";
 import { getPostsFromWordpress } from "@/lib/services/wordpess";
+import { formatDate } from "@/lib/lib";
 
 export async function BlogRoll({ page }: { page: number }) {
 
@@ -30,7 +30,7 @@ export async function BlogRoll({ page }: { page: number }) {
               <div className="col-sm-8">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <span className="fs-sm text-muted">{post.date}</span>
+                    <span className="fs-sm text-muted">{formatDate(post.date)}</span>
                   </div>
                   <h3 className="h4">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
