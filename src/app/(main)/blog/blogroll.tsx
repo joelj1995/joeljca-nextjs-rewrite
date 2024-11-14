@@ -40,7 +40,7 @@ export async function BlogRoll({ page }: { page: number }) {
                   <div className="d-flex align-items-center justify-content-between">
                     <a href={`/blog/${post.slug}`} className="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
                       <Image src={profilePic} className="rounded-circle me-3" width={48} height={48} alt="Avatar" />
-                      Joel Johnston
+                      Alex Johnston
                     </a>
                   </div>
                 </div>

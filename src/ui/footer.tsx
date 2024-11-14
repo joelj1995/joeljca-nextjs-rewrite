@@ -44,7 +44,7 @@ export default function Footer() {
                 <div id="footer-links" className="row">
                   <div className="col-lg-4">
                     <ul className="nav flex-column pb-lg-1 mb-lg-3">
-                      <li className="nav-link d-inline-block px-0 pt-1 pb-2"><a className="nav-link text-light p-0" href="https://www.linkedin.com/in/joeljohnston1995/" target="_blank">LinkedIn</a></li>
+                      <li className="nav-link d-inline-block px-0 pt-1 pb-2"><a className="nav-link text-light p-0" href="www.linkedin.com/in/joel-alexander-johnston" target="_blank">LinkedIn</a></li>
                     </ul>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export default function Footer() {
 
               <div className="col-xl-4 col-lg-5 pt-2 pt-lg-0">
                 <h6 className="mb-2">Contact</h6>
-                <a href="mailto:me@joelj.ca" className="fw-medium">me@joelj.ca</a>
+                <a href="mailto:me@alexj.ca" className="fw-medium">me@alexj.ca</a>
               </div>
 
             </div>

@@ -1,10 +1,10 @@
 import { NotFoundError } from "@/lib/model/app-error";
-import { getPageFromContentful } from "@/lib/services/contentful";
+import { getPageFromWordpress } from "@/lib/services/wordpess";
 import { PageHeader } from "@/ui/page-header";
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
-  const page = await getPageFromContentful(params.slug);
+  const page = await getPageFromWordpress(params.slug);
 
   if (page instanceof NotFoundError) {
     return (

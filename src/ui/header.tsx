@@ -26,7 +26,7 @@ export default function Header({ forceDarkMode = false }: { forceDarkMode: boole
         <Link
           className="navbar-brand pe-3"
           href="/">
-          Joel Johnston
+          J. Alexander Johnston
         </Link>
 
         <div
