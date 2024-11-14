@@ -1,4 +1,14 @@
+/*
+ Wordpress
+*/
 
+.wp-block-image.aligncenter {
+  text-align: center;
+}
+
+/*
+  Style
+*/
 
 .page-loading {
   position: fixed;
