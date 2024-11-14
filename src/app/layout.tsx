@@ -10,8 +10,8 @@ import Footer from '@/ui/footer';
 const manrope = Manrope({ subsets: ['latin'] } );
 
 export const metadata: Metadata = {
-  title: 'Joel Johnston',
-  description: 'Joel Johnston\'s personal website.',
+  title: 'J. Alexander Johnston',
+  description: 'Alex Johnston\'s Professional Services.',
 }
 
 export default function RootLayout({
