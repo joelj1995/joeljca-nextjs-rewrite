@@ -10,8 +10,8 @@ import Footer from '@/ui/footer';
 const manrope = Manrope({ subsets: ['latin'] } );
 
 export const metadata: Metadata = {
-  title: 'J. Alexander Johnston',
-  description: 'Alex Johnston\'s Professional Services.',
+  title: 'J. Alexander Johnston - Expert SQL Server Consulting',
+  description: 'Alex Johnston\'s SQL Server Consulting Services.',
 }
 
 export default function RootLayout({
